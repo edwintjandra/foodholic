@@ -1,0 +1,45 @@
+.header {
+    background:url('https://static1.tarintop.ir/thumbnail/av4lJhgCRMGK/oggHpKny3PDzPEiP6DvczTtKATcxHLioyjCapKIjFwzrldeT8jueGpHxVBLWRESh/%D9%87%D9%85%D8%A8%D8%B1%DA%AF%D8%B1.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    height: 90vh;
+    position: relative;
+} 
+
+ul.nav {
+    border-bottom:solid rgba(0,0,0,.25) 1px;
+}
+
+.header > div:nth-child(1) {
+    position: absolute;
+    z-index: 1;
+    margin-top:220px;
+    color:white;
+} 
+
+.header > div:nth-child(2) {
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top:0;
+    left:0;
+     
+    height: 90vh;
+    width: 100%;
+    z-index: 0;
+}
+
+.sidebar{
+    background-color: rgb(224, 224, 224);
+    height: 100vh;
+   padding-left:20px; 
+    padding-top: 25px;
+    border-radius: 5px;
+    color: rgb(97, 27, 249);
+    
+}
+
+.sidebar li{
+    list-style: none;
+  
+}
