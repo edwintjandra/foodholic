@@ -1,52 +1,48 @@
 @extends('layout.master')
 @section('content')
 
+<div class="container">
 
-<div class="container mt-3">
-    <div class="main">
-    <a class="btn btn-success mb-3" href="{{ Route('restaurants.create') }}">add new restaurant</a>
-    
+ 
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Description</th>
-          <th scope="col">picture</th>
-          <th scope="col">download</th>
-          <th scop="col">Edit</th>
-          <th scop="col">Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach($restaurants as $restaurant)
-        <tr>
-          <td>{{ $restaurant->name }}</td>
-          <td>{{ $restaurant->description }}</td>
-          <td> <img src="{{ asset('storage/images/' . $restaurant->picture) }}" alt="" style="width:100px; height:100px;"> </td>
-          <td>  <a > download </a>  </td>
-          <td> 
-            <a href="{{ Route('restaurants.edit',$restaurant->id) }}"> Edit </a>  </td>
-          <td> 
-          <form action="{{ route('restaurants.destroy',$restaurant->id) }}" method="POST">
-                @csrf 
-                @method('DELETE')
-                <button>delete</button>
+@if(Auth::user()->is_admin==1)
+<p class="text-center">your are an admin <br> Go to <a href="{{ route('admin') }}">admin page</a></p>
+@endif
 
-            </form>
-            </form>  
-          </td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-
-    
-      </div>
-  </div>
-
+<form class="search-query mt-5">
+  <div class="form-group">
+     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search restaurant">
+   </div> 
+</form>
+<div class="d-flex justify-content-between food-category">
+     <p>Cafe</p>
+     <p>Fast food</p>
+     <p>Chinese food</p>
+     <p>Western food</p>
+     <p>Indian food</p>
 </div>
 
+ 
+<div class="row mt-3">
+    @foreach($restaurants as $restaurant)
+    <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4">
+        <div class="card mb-4"  >
+             <div class="card-body">
+                <img class="img-fluid" src="{{ asset('storage/images/' . $restaurant->picture) }}" alt=""  >
+                <p class="card-text">
+                    <strong class="d-flex justify-content-between">{{ $restaurant->name }} <i class="fa-solid fa-heart" style="line-height:30px"></i></strong>
+                    Berjarak sekitar 2km <br>
+                    Category:
+                 </p>
+             </div>
+        </div>
+    </div>
+    @endforeach
+</div>
+       
+ 
+
+</div>
 
 
 

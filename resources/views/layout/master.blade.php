@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4344e7fc95.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('style/style.css')}}">
 
 </head>
 <body>
 
     <ul class="nav justify-content-center mt-4 pb-4">
+         
         <li class="nav-item">
             <a class="nav-link " href="/">Home</a>
         </li>
@@ -21,6 +23,16 @@
         <li class="nav-item">
             <a class="nav-link" href="#">About</a>
         </li>
+
+        <div class="login-button">
+            @if(!Auth::user())
+            <a class="btn btn-success login-button" href="/login">Login</a>
+            @else
+            <p class="lead text-sm">Welcome, <a href="/profile" class="link-disable"><i class="fa-solid fa-user"></i> {{ Auth::user()->name }}</a> </p>
+            @endif
+        </div>
+       
+        
     </ul>
     @yield('content')
     

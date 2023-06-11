@@ -9,6 +9,15 @@
 
 ul.nav {
     border-bottom:solid rgba(0,0,0,.25) 1px;
+    position: relative;
+}
+
+.login-button {
+    position: absolute;
+    right:50px;
+}
+.link-disable {
+    color:black;
 }
 
 .header > div:nth-child(1) {
@@ -43,3 +52,31 @@ ul.nav {
     list-style: none;
   
 }
+
+.search-query {
+     width: 80%;
+    margin:auto;
+}
+
+.search-query input {
+    padding:10px;
+}
+
+.food-category {
+    width: 80%;
+    margin:auto
+}
+
+.card ,.card-body{
+    padding:0;
+    border:none;
+}
+
+.card img {
+    border-radius:5px;
+    height: 200px;
+ }
+
+ 
+
+ 
