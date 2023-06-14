@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('picture');
+            $table->string('picture')->default('card-1.jpeg');
             $table->timestamps();
         });
     }

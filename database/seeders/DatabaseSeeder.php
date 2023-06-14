@@ -22,5 +22,9 @@ class DatabaseSeeder extends Seeder
        
         Restaurant::factory()
         ->count(4)->create();
+
+        $this->call([
+            UserSeeder::class,
+        ]);
     }
 }
